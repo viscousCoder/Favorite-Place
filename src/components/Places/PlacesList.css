@@ -1,0 +1,28 @@
+/* @media (min-width: 1200px) {
+  .css-1lxpc44-MuiContainer-root {
+    max-width: 100%;
+  }
+} */
+
+.css-zow5z4-MuiGrid-root {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  width: 100%;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  margin-top: 0 !important;
+  width: 100% !important;
+  margin-left: 0 !important;
+}
+
+.css-zow5z4-MuiGrid-root > .MuiGrid-item {
+  padding-left: 0px;
+}
