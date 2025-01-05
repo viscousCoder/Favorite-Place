@@ -1,0 +1,50 @@
+.box1 {
+  display: flex;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.carousel-itemss {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  width: 100vw;
+  height: 70vh;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  overflow: hidden;
+  flex-direction: column;
+}
+
+.carousel-text {
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+/* Add responsive breakpoints */
+@media (max-width: 768px) {
+  .carousel-itemss {
+    height: 50vh;
+  }
+
+  .carousel-text {
+    font-size: 1.25rem;
+    padding: 8px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-itemss {
+    height: 40vh;
+  }
+
+  .carousel-text {
+    font-size: 1rem;
+    padding: 6px 12px;
+  }
+}

@@ -1,12 +1,13 @@
-import React from "react";
+/* eslint-disable react/prop-types */
+
 import {
   Container,
   Grid,
   Typography,
-  Box,
   Card,
   CardContent,
   CardMedia,
+  Box,
 } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 
@@ -17,18 +18,21 @@ const imageUrls = [
   "https://media.istockphoto.com/id/157647148/photo/young-woman-meditating-by-ganges-river-in-rishikesh.webp?a=1&b=1&s=612x612&w=0&k=20&c=z07QIkDBL-0ONJsJKr6OCagbZuJeqGS1cDci__3i16Y=", // Third Image
 ];
 
-const LandingPage = () => {
+const NearPlaces = ({ data }) => {
   const theme = useTheme();
 
   return (
-    <Container>
-      {/* Section 1 */}
+    <Container sx={{ width: "100%", p: { xs: 0, md: 0, lg: 0 }, mt: 5, mb: 5 }}>
+      <Box sx={{ mb: 2 }}>
+        <Typography variant="h3">Near By Places</Typography>
+      </Box>
       <Grid container spacing={4} alignItems="center">
         {/* Image on left, Card on right on larger screens */}
         <Grid item xs={12} sm={6} md={6}>
           <CardMedia
             component="img"
-            image={imageUrls[0]}
+            // image={imageUrls[0]}
+            image={data?.nearbyPlaces[0]?.image}
             alt="Favorite Place 1"
             sx={{
               width: "100%",
@@ -43,12 +47,10 @@ const LandingPage = () => {
           <Card sx={{ padding: 2 }}>
             <CardContent>
               <Typography variant="h5" component="h2" gutterBottom>
-                Explore the Taj Mahal
+                {data?.nearbyPlaces[0]?.title}
               </Typography>
               <Typography variant="body1" color="text.secondary">
-                The Taj Mahal, a symbol of eternal love, is one of India's most
-                iconic monuments, attracting millions of visitors to Agra every
-                year.
+                {data?.nearbyPlaces[0]?.des}
               </Typography>
             </CardContent>
           </Card>
@@ -62,12 +64,10 @@ const LandingPage = () => {
           <Card sx={{ padding: 2 }}>
             <CardContent>
               <Typography variant="h5" component="h2" gutterBottom>
-                Relax on the Beaches of Goa
+                {data?.nearbyPlaces[1]?.title}
               </Typography>
               <Typography variant="body1" color="text.secondary">
-                Known for its golden beaches, vibrant nightlife, and rich
-                Portuguese heritage, Goa offers a perfect getaway for travelers
-                seeking both adventure and relaxation.
+                {data?.nearbyPlaces[1]?.des}
               </Typography>
             </CardContent>
           </Card>
@@ -76,7 +76,7 @@ const LandingPage = () => {
         <Grid item xs={12} sm={6} md={6}>
           <CardMedia
             component="img"
-            image={imageUrls[1]}
+            image={data?.nearbyPlaces[1]?.image}
             alt="Favorite Place 2"
             sx={{
               width: "100%",
@@ -90,11 +90,10 @@ const LandingPage = () => {
 
       {/* Section 3 (Image on Left, Text on Right) */}
       <Grid container spacing={4} alignItems="center">
-        {/* Image on left, Card on right */}
         <Grid item xs={12} sm={6} md={6}>
           <CardMedia
             component="img"
-            image={imageUrls[2]}
+            image={data?.nearbyPlaces[2]?.image}
             alt="Favorite Place 3"
             sx={{
               width: "100%",
@@ -109,12 +108,10 @@ const LandingPage = () => {
           <Card sx={{ padding: 2 }}>
             <CardContent>
               <Typography variant="h5" component="h2" gutterBottom>
-                Discover Rishikesh: The Yoga Capital
+                {data?.nearbyPlaces[2]?.title}
               </Typography>
               <Typography variant="body1" color="text.secondary">
-                Rishikesh, nestled in the foothills of the Himalayas, is known
-                for its serene beauty, spiritual ambiance, and as a center for
-                yoga and meditation.
+                {data?.nearbyPlaces[2]?.des}
               </Typography>
             </CardContent>
           </Card>
@@ -124,4 +121,4 @@ const LandingPage = () => {
   );
 };
 
-export default LandingPage;
+export default NearPlaces;

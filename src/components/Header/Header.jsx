@@ -1,4 +1,4 @@
-// /* eslint-disable react/prop-types */
+/* eslint-disable react/prop-types */
 
 import { useEffect, useState } from "react";
 import {
@@ -13,9 +13,10 @@ import {
   Avatar,
   Menu,
   MenuItem,
+  useThemeProps,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import { redirect, Link as RouterLink, useNavigate } from "react-router-dom";
+import { Link as RouterLink, useNavigate } from "react-router-dom";
 import { useTheme } from "../../context/Theme";
 import { DarkMode, LightMode } from "@mui/icons-material";
 import { deepOrange } from "@mui/material/colors";
@@ -35,6 +36,8 @@ const NavList = ({ closeDrawer, ...props }) => {
   const iconLogo = curr?.username?.slice(0, 1).toUpperCase();
 
   // console.log(currentUser, "hii", curr);
+  // const theme = useThemeProps();
+  // console.log(theme, "is theme");
 
   function handleChange() {
     toggleDarkMode();

@@ -5,10 +5,12 @@ import {
   Twitter,
 } from "@mui/icons-material";
 import { Box, Container, IconButton, Stack, Typography } from "@mui/material";
+import { useTheme } from "../../context/Theme";
 
 const Footer = () => {
+  const { isDark } = useTheme();
   return (
-    <Box sx={{ background: "#dedbdb" }}>
+    <Box sx={{ background: !isDark ? "#dedbdb" : "#787373" }}>
       <Container
         sx={{
           display: "flex",
